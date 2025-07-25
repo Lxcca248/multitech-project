@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multitech - Usuários</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+<header class="header">
+  <div class="logo">Multitech</div>
+  <nav class="nav">
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="estatisticas.html">Relatórios</a></li>
+      <li><a href="usuarios.html" class="active">Usuários</a></li>
+      <li><a href="#" id="logoutBtn">Sair</a></li>
+    </ul>
+  </nav>
+</header>
+
+<aside class="sidebar">
+  <ul>
+    <li><a href="dashboard.html" title="Dashboard">🏠</a></li>
+    <li><a href="estatisticas.html" title="Relatórios">📊</a></li>
+    <li><a href="usuarios.html" class="active" title="Usuários">👥</a></li>
+    <li><a href="configuracoes.html" title="Configurações">⚙️</a></li>
+  </ul>
+</aside>
+
+<main class="main-content">
+  <h1>Lista de Usuários</h1>
+
+  <table id="usersTable" class="users-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Usuários serão inseridos aqui via JS -->
+    </tbody>
+  </table>
+</main>
+
+<script src="script-usuarios.js"></script>
+</body>
+</html>

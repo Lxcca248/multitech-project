@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multitech - Estatísticas</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="logo">Multitech</div>
+  <nav class="nav">
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="estatisticas.html" class="active">Relatórios</a></li>
+      <li><a href="usuarios.html">Usuários</a></li>
+      <li><a href="#" id="logoutBtn">Sair</a></li>
+    </ul>
+  </nav>
+</header>
+
+<aside class="sidebar">
+  <ul>
+    <li><a href="dashboard.html" title="Dashboard">🏠</a></li>
+    <li><a href="estatisticas.html" class="active" title="Relatórios">📊</a></li>
+    <li><a href="usuarios.html" title="Usuários">👥</a></li>
+    <li><a href="configuracoes.html" title="Configurações">⚙️</a></li>
+  </ul>
+</aside>
+
+<main class="main-content">
+  <h1>Relatórios Detalhados</h1>
+
+  <section class="chart-section">
+    <h2>Visitas Diárias</h2>
+    <canvas id="dailyVisitsChart"></canvas>
+  </section>
+
+  <section class="chart-section" style="margin-top: 3rem;">
+    <h2>Usuários Cadastrados por Mês</h2>
+    <canvas id="userRegistrationsChart"></canvas>
+  </section>
+</main>
+
+<script src="script-estatisticas.js"></script>
+</body>
+</html>

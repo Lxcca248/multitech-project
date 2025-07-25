@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multitech - Configurações</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+<header class="header">
+  <div class="logo">Multitech</div>
+  <nav class="nav">
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="estatisticas.html">Relatórios</a></li>
+      <li><a href="usuarios.html">Usuários</a></li>
+      <li><a href="#" id="logoutBtn">Sair</a></li>
+    </ul>
+  </nav>
+</header>
+
+<aside class="sidebar">
+  <ul>
+    <li><a href="dashboard.html" title="Dashboard">🏠</a></li>
+    <li><a href="estatisticas.html" title="Relatórios">📊</a></li>
+    <li><a href="usuarios.html" title="Usuários">👥</a></li>
+    <li><a href="configuracoes.html" class="active" title="Configurações">⚙️</a></li>
+  </ul>
+</aside>
+
+<main class="main-content">
+  <h1>Configurações do Usuário</h1>
+
+  <form id="settingsForm" class="settings-form">
+    <label for="displayName">Nome para exibição:</label>
+    <input type="text" id="displayName" name="displayName" placeholder="Seu nome" />
+
+    <label for="emailNotifications">
+      <input type="checkbox" id="emailNotifications" name="emailNotifications" />
+      Receber notificações por email
+    </label>
+
+    <button type="submit">Salvar Configurações</button>
+  </form>
+</main>
+
+<script src="script-configuracoes.js"></script>
+</body>
+</html>

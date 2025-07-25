@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multitech - Dashboard</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="logo">Multitech</div>
+  <nav class="nav">
+    <ul>
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="estatisticas.html">Relatórios</a></li>
+      <li><a href="usuarios.html">Usuários</a></li>
+      <li><a href="#" id="logoutBtn">Sair</a></li>
+    </ul>
+  </nav>
+</header>
+
+<aside class="sidebar">
+  <ul>
+    <li><a href="dashboard.html" class="active" title="Dashboard">🏠</a></li>
+    <li><a href="estatisticas.html" title="Relatórios">📊</a></li>
+    <li><a href="usuarios.html" title="Usuários">👥</a></li>
+    <li><a href="configuracoes.html" title="Configurações">⚙️</a></li>
+  </ul>
+</aside>
+
+<main class="main-content">
+  <h1>Olá, <span id="userName">Usuário Demo</span></h1>
+
+  <section class="cards">
+    <article class="card">
+      <h2>Usuários Ativos</h2>
+      <p id="totalUsers">0</p>
+    </article>
+    <article class="card">
+      <h2>Novos Cadastros</h2>
+      <p>15</p>
+    </article>
+    <article class="card">
+      <h2>Visitas Hoje</h2>
+      <p>350</p>
+    </article>
+  </section>
+
+  <section class="chart-section">
+    <h2>Visitas Mensais</h2>
+    <canvas id="myChart"></canvas>
+  </section>
+</main>
+
+<script>
+  // Atualiza nome do usuário logado e checa login
+  document.addEventListener('DOMContentLoaded', () => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    if (!user) {
+      window.location.href = 'login.html';
+      return;
+    }
+    document.getElementById('userName').textContent = user.name || 'Usuário Demo';
+
+    // Busca usuários ativos do backend
+    fetch('http://localhost:3000/users')
+      .then(res => {
+        if (!res.ok) throw new Error('Erro ao carregar usuários');
+        return res.json();
+      })
+      .then(data => {
+        document.getElementById('totalUsers').textContent = data.length;
+      })
+      .catch(err => {
+        console.error(err);
+      });
+
+    // Configura logout
+    const logoutBtn = document.getElementById('logoutBtn');
+    logoutBtn.addEventListener('click', e => {
+      e.preventDefault();
+      localStorage.removeItem('user');
+      window.location.href = 'login.html';
+    });
+
+    // Cria gráfico Chart.js
+    const ctx = document.getElementById('myChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul'],
+        datasets: [{
+          label: 'Visitas Mensais',
+          data: [50, 70, 40, 90, 120, 150, 170],
+          backgroundColor: 'rgba(37, 99, 235, 0.15)',
+          borderColor: '#2563eb',
+          fill: true,
+          tension: 0.3,
+          pointRadius: 4,
+          pointHoverRadius: 6,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            labels: {
+              color: '#1f2937',
+              font: {
+                size: 14,
+                weight: '600'
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { color: '#6b7280' },
+            grid: { color: '#e5e7eb' }
+          },
+          x: {
+            ticks: { color: '#6b7280' },
+            grid: { color: '#f3f4f6' }
+          }
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* --- Cabeçalho --- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #2563eb;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.3rem 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+}
+
+.nav ul li a:hover,
+.nav ul li a:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 80px;
+  height: calc(100vh - 60px);
+  background-color: #1e40af;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar ul {
+  list-style: none;
+  width: 100%;
+}
+
+.sidebar ul li {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  display: inline-block;
+  font-size: 1.8rem;
+  color: #bfdbfe;
+  width: 100%;
+  padding: 0.5rem 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 10px;
+}
+
+.sidebar ul li a.active,
+.sidebar ul li a:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* --- Conteúdo Principal --- */
+.main-content {
+  margin-left: 80px;
+  padding: 4rem 2rem 2rem 2rem;
+  max-width: 1200px;
+  margin-right: auto;
+}
+
+.main-content h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+/* --- Cards --- */
+.cards {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+  padding: 2rem;
+  flex: 1 1 250px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.card p {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* --- Seção do gráfico --- */
+.chart-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+}
+
+.chart-section h2 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #2563eb;
+}
+
+/* --- Login e Register --- */
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+}
+
+.login-main {
+  background: white;
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  width: 350px;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+  text-align: center;
+}
+
+.login-box h1 {
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 2rem;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.login-box label {
+  font-weight: 600;
+  text-align: left;
+  color: #1f2937;
+}
+
+.login-box input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.login-box input:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+.login-box button {
+  margin-top: 1rem;
+  padding: 0.85rem;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-box button:hover {
+  background-color: #1e40af;
+}
+
+.login-text {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.login-text a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav ul {
+    gap: 1rem;
+  }
+  .sidebar {
+    width: 60px;
+  }
+  .main-content {
+    margin-left: 60px;
+    padding: 4rem 1rem 2rem 1rem;
+  }
+  .cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .login-main {
+    width: 90vw;
+    padding: 2rem;
+    border-radius: 12px;
+  }
+}
+/* Tabela usuários */
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+}
+
+.users-table thead {
+  background-color: #2563eb;
+  color: white;
+}
+
+.users-table th, .users-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.users-table tbody tr:hover {
+  background-color: #f3f4f6;
+}
+
+/* Form configurações */
+.settings-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+  max-width: 500px;
+}
+
+.settings-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.settings-form input[type="text"] {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+  font-size: 1rem;
+}
+
+.settings-form input[type="checkbox"] {
+  margin-right: 0.5rem;
+  transform: scale(1.2);
+}
+
+.settings-form button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.settings-form button:hover {
+  background-color: #1e40af;
+}
